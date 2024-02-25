@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Hunting</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header class="mx-auto text-center">
+      <h1 class="text-3xl text-center font-bold my-5">Phone Hunting</h1>
+      <input
+        id="searchField"
+        type="text"
+        placeholder="Search here ..."
+        class="input input-bordered w-96 my-5"
+      />
+      <button
+        onclick="hadleSearch()"
+        id="serchBtn"
+        class="btn btn-md btn-outline"
+      >
+        Search
+      </button>
+    </header>
+
+    <main>
+      <section>
+        <!-- loading spinner  -->
+        <div id="loading-div" class="mx-auto text-center my-24 hidden">
+          <span class="w-24 loading loading-bars text-success"></span>
+        </div>
+
+        <!-- modal  ---------------------------->
+
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_phone_details" class="modal modal-bottom sm:modal-middle">
+          <div id="modal-div" class="modal-box">
+           
+          </div>
+        </dialog>
+
+        <!-- ---------------------------- -->
+
+        <div
+          id="phones-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        ></div>
+        <div id="show-more-button-container" class="mx-auto text-center">
+          <button
+            onclick="showMoreBtn()"
+            id="show-more"
+            class="btn btn-md btn-outline hidden my-10"
+          >
+            Show More..
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/phone.js"></script>
+  </body>
+</html>
